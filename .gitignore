@@ -1,0 +1,10 @@
+# compiled output
+game.exe
+*.exe
+*.o
+
+# VS Code
+.vscode/
+
+# build folder
+build/
