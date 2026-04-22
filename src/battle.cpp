@@ -3,24 +3,22 @@
 #include <iostream>
 using namespace std;
 
-Battle::Battle(Character* player, Monster* monster) {
-    this->player         = player;
-    this->monster        = monster;
-    this->round          = 1;
-    this->monsterStunned = false;
+Battle::Battle(Character* player, Monster* monster) 
+    : player(player), monster(monster), round(1), monsterStunned(false) {
 }
 
-void Battle::showBattleStatus() {
+// Mark as const because this function doesn't change the Battle state
+void Battle::showBattleStatus() const {
     clearScreen();
     printLine();
     cout << "  Round " << round << "\n";
     printLine();
-    showHPBar(player->getName(),  
-              player->getHealth(),  
-              player->getMaxHealth());
-    showHPBar(monster->getName(), 
-              monster->getHealth(), 
-              monster->getMaxHealth());
+    
+    // Explicitly check for nullptr before using pointers
+    if (player && monster) {
+        showHPBar(player->getName(), player->getHealth(), player->getMaxHealth());
+        showHPBar(monster->getName(), monster->getHealth(), monster->getMaxHealth());
+    }
     printLine();
 }
 
