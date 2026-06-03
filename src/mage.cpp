@@ -53,9 +53,10 @@ int Mage::specialAttack() {
 }
 
 void Mage::showSpecialInfo() {
-    cout << "  Special: Fireball — 2x damage costs 40 mana (" 
+    cout << "  Special: Fireball - 2x damage costs 40 mana (" 
          << specialUses << " uses)\n";
     cout << "  Mana: " << mana << "/" << maxMana << "\n";
+
 }
 
 int Mage::getMana() { return mana; }

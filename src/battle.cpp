@@ -8,7 +8,7 @@ Battle::Battle(Character* player, Monster* monster)
 }
 
 // Mark as const because this function doesn't change the Battle state
-void Battle::showBattleStatus() const {
+void Battle::showBattleStatus() {
     clearScreen();
     printLine();
     cout << "  Round " << round << "\n";

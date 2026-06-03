@@ -40,6 +40,6 @@ int Warrior::specialAttack() {
 }
 
 void Warrior::showSpecialInfo() {
-    cout << "  Special: Shield Bash — stuns monster 1 turn (" 
+    cout << "  Special: Shield new - Bash stuns monster 1 turn (" 
          << specialUses << " uses)\n";
 }

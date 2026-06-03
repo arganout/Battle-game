@@ -3,7 +3,6 @@
 #include <memory>
 #include <random>
 #include <string>
-
 #include "include/warrior.h"
 #include "include/mage.h"
 #include "include/archer.h"
@@ -13,7 +12,7 @@
 #include "include/inventory.h"
 
 // ---------------------------------------------------------------------------
-// Cross-platform pause — replaces system("pause") and system("chcp 65001")
+// Cross-platform pause - replaces system("pause") and system("chcp 65001")
 // ---------------------------------------------------------------------------
 void waitForEnterModern() {
     std::cout << "\n  Press Enter to continue...";
@@ -23,7 +22,7 @@ void waitForEnterModern() {
 
 // ---------------------------------------------------------------------------
 // chooseCharacter
-// Returns unique_ptr — caller owns the Character, no manual delete needed
+// Returns unique_ptr - caller owns the Character, no manual delete needed
 // ---------------------------------------------------------------------------
 std::unique_ptr<Character> chooseCharacter() {
     printLine();
@@ -56,7 +55,7 @@ std::unique_ptr<Character> chooseCharacter() {
 
 // ---------------------------------------------------------------------------
 // runWave
-// Takes raw Character* — borrows the pointer, does NOT own it
+// Takes raw Character* - borrows the pointer, does NOT own it
 // Caller (main) retains ownership via unique_ptr
 // ---------------------------------------------------------------------------
 bool runWave(Character* player,
@@ -82,19 +81,21 @@ bool runWave(Character* player,
 // main
 // ---------------------------------------------------------------------------
 int main() {
-    // Seed the random engine once here — pass it down if your battle/utils
+    system("chcp 65001 > nul");
+    // Seed the random engine once here - pass it down if your battle/utils
     // need randomness, instead of using global srand/rand
     std::mt19937 rng(std::random_device{}());
-
     // Title screen
     printLine();
+    std::cout << "now BUILD TEST\n";
     std::cout << "         BATTLE GAME\n";
     std::cout << "    Turn Based RPG in C++\n";
     printLine();
     waitForEnterModern();
 
-    // Choose character — unique_ptr manages lifetime automatically
+    // Choose character - unique_ptr manages lifetime automatically
     std::unique_ptr<Character> player = chooseCharacter();
+
 
     // Show character stats
     printLine();

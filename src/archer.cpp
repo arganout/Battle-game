@@ -44,6 +44,6 @@ int Archer::specialAttack() {
 }
 
 void Archer::showSpecialInfo() {
-    cout << "  Special: Double Shot — two arrows in one turn (" 
+    cout << "  Special: Double Shot - two arrows in one turn (" 
          << specialUses << " uses)\n";
 }
